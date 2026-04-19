@@ -43,7 +43,7 @@ A FAIL may occur when:
 - Data is not received correctly
 - Data mismatch occurs
 - Bus error / timeout happens
-![I2C Loopback Test FAIL](docs/images/Fail.png)
+![I2C Loopback Test FAIL](Docs/images/Fail.png)
 ---
 
 ### ✅ PASS Condition
@@ -51,7 +51,7 @@ A PASS indicates:
 - `HELLO_I2C` is received correctly
 - Returned data matches transmitted data
 - Communication is stable
-![I2C Loopback Test FAIL](docs/images/Pass.png)
+![I2C Loopback Test FAIL](Docs/images/Pass.png)
 
 ### 🧠 Note
 
