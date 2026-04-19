@@ -60,8 +60,8 @@ all: main-build
 main-build: STM32H7_I2C_Loopback_IT_Test.elf secondary-outputs
 
 # Tool invocations
-STM32H7_I2C_Loopback_IT_Test.elf STM32H7_I2C_Loopback_IT_Test.map: $(OBJS) $(USER_OBJS) /Users/chenjionghao/Library/CloudStorage/OneDrive-Personal/Firmware_Communication_Demo/STM32H7_I2C_Loopback_IT_Test/STM32H723ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32H7_I2C_Loopback_IT_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/chenjionghao/Library/CloudStorage/OneDrive-Personal/Firmware_Communication_Demo/STM32H7_I2C_Loopback_IT_Test/STM32H723ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_I2C_Loopback_IT_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32H7_I2C_Loopback_IT_Test.elf STM32H7_I2C_Loopback_IT_Test.map: $(OBJS) $(USER_OBJS) /Users/chenjionghao/Documents/STM32/STM32H7_I2C_Loopback_IT_Test/STM32H723ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32H7_I2C_Loopback_IT_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/chenjionghao/Documents/STM32/STM32H7_I2C_Loopback_IT_Test/STM32H723ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H7_I2C_Loopback_IT_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

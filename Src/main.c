@@ -101,7 +101,7 @@ static TestResult_t Run_I2C_Test(void)
 {
   HAL_StatusTypeDef status;
   uint32_t tickStart;
-  printf("==========================Test Start=========================\r\n");
+  printf("==============I2C LoopBack Test Start=========================\r\n");
   /* 1. Let I2C2 (Slave) enter receive state first */
   status = HAL_I2C_Slave_Receive_IT(&hi2c2, rxData, sizeof(rxData));
   if (status != HAL_OK)
@@ -134,11 +134,23 @@ static TestResult_t Run_I2C_Test(void)
 
 static TestResult_t Check_I2C_Data(void)
 {
+  printf("Rx Data = ");
+  for (int i = 0; i < sizeof(rxData); i++)
+  {
+    if (rxData[i] >= 32 && rxData[i] <= 126)
+    {
+      printf("%c", rxData[i]);   // 可顯示字元
+    }
+    else
+    {  
+      printf(".");               // 不可顯示
+    }
+  }
+  printf("\r\n");
   if (memcmp(txData, rxData, sizeof(txData)) == 0)
   {
     return TEST_PASS;
   }
-
   return TEST_MISMATCH;
 }
 
